@@ -15,7 +15,7 @@ jobs:
       id: build-image
       run: |
         docker build "$GITHUB_WORKSPACE/frontend" -f  "frontend/Dockerfile" -t ajitacr.azurecr.io/ajitazureaks:${{ github.sha }} --label dockerfile-path=frontend/Dockerfile
-        docker push ajitacr.azurecr.io/ajitazureaks:${{ github.sha }}
+        docker push ajitacr.azurecr.io/ajitazureaks:latest
     
     - uses: azure/k8s-set-context@v1
       with:
@@ -46,6 +46,6 @@ jobs:
           manifests/service.yml
           manifests/ingress.yml
         images: |
-          ajitacr.azurecr.io/ajitazureaks:${{ github.sha }}
+          ajitacr.azurecr.io/ajitazureaks:latest
         imagepullsecrets: |
           ajitazureaksdockerauth
