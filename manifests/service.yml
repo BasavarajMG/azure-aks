@@ -1,11 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: e-load-balancer-ajitazureaks-ea0d
+    name: "ajitazureaks-ea0d"
+    labels:
+        app: "ajitazureaks-ea0d"
 spec:
-  type: LoadBalancer
-  selector:
-    app: ajitazureaks-ea0d
-  ports:
-  - port: 80
-    targetPort: 8080
+    type: ClusterIP
+    ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: http
+    selector:
+        app: "ajitazureaks-ea0d"
