@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: react-nginx-container
-        image: ajitacr.azurecr.io/todo-app:v1
+        image: ajitacr.azurecr.io/todo-app:v2
         ports:
         - containerPort: 8080
