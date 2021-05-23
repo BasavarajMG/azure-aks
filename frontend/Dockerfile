@@ -1,7 +1,7 @@
 FROM node:10 AS ui-build
 WORKDIR /app
 COPY . ./
-RUN  cd frontend && npm install && npm run build
+RUN npm install && npm run build
 
 FROM nginx:alpine
 #!/bin/bash
