@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "ajitazureaks-ea0d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "ajitazureaks-ea0d"
+  template:
+    metadata:
+      labels:
+        app: "ajitazureaks-ea0d"
+    spec:
+      containers:
+        - name: "ajitazureaks-ea0d"
+          image: "ajitacr.azurecr.io/ajitazureaks"
+          ports:
+          - containerPort: 8080
