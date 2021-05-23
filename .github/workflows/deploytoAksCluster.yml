@@ -14,7 +14,7 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/frontend" -f  "frontend/Dockerfile" -t ajitacr.azurecr.io/ajitazureaks:$SHORT_SHA --label dockerfile-path=frontend/Dockerfile
+        docker build "$GITHUB_WORKSPACE/frontend" -f  "frontend/Dockerfile" -t ajitacr.azurecr.io/ajitazureaks:new-${{ github.sha }} --label dockerfile-path=frontend/Dockerfile
         docker push ajitacr.azurecr.io/ajitazureaks:new-${{ github.sha }}
     
     - uses: azure/k8s-set-context@v1
