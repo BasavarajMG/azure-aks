@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: "ajitazureaks-ea0d"
-          image: "ajitacr.azurecr.io/ajitazureaks:latest"
+          image: "ajitacr.azurecr.io/ajitazureaks:v1"
           ports:
           - containerPort: 8080

@@ -14,8 +14,8 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/frontend" -f  "frontend/Dockerfile" -t ajitacr.azurecr.io/ajitazureaks:latest --label dockerfile-path=frontend/Dockerfile
-        docker push ajitacr.azurecr.io/ajitazureaks:latest
+        docker build "$GITHUB_WORKSPACE/frontend" -f  "frontend/Dockerfile" -t ajitacr.azurecr.io/ajitazureaks:v1 --label dockerfile-path=frontend/Dockerfile
+        docker push ajitacr.azurecr.io/ajitazureaks:v1
     
     - uses: azure/k8s-set-context@v1
       with:
@@ -46,6 +46,6 @@ jobs:
           manifests/service.yml
           manifests/ingress.yml
         images: |
-          ajitacr.azurecr.io/ajitazureaks:latest
+          ajitacr.azurecr.io/ajitazureaks:v1
         imagepullsecrets: |
           ajitazureaksdockerauth
