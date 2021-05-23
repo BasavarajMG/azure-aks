@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: "ajitazureaks-ea0d"
+  name: "react-nginx-app"
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: "ajitazureaks-ea0d"
+      app: "react-nginx"
   template:
     metadata:
       labels:
-        app: "ajitazureaks-ea0d"
+        app: "react-nginx"
     spec:
       containers:
-        - name: "ajitazureaks-ea0d"
+        - name: "react-nginx-container"
           image: "ajitacr.azurecr.io/ajitazureaks:latest"
           ports:
           - containerPort: 8080
