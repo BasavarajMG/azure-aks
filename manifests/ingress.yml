@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "ajitazureaks-ea0d"
+    labels:
+        app: "ajitazureaks-ea0d"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: ajitazure-updated-ajitazureaks-ea0d.413126a369a048389dfd.centralus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "ajitazureaks-ea0d"
+                servicePort: 8080
