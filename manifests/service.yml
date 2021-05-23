@@ -5,7 +5,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: react-nginx
+    app: ajitazureaks-ea0d
   ports:
   - port: 80
     targetPort: 8080
