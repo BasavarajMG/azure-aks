@@ -142,7 +142,7 @@ const Main = () => {
                                         </div>
                                         <div className='main__application-info'>
                                             <h3>
-                                                Simple Azure K8S App
+                                                Simple Azure Kubernetes App
                                             </h3>
                                             <span>
                                                 with
