@@ -52,4 +52,4 @@ jobs:
 
     - name: Rolling out update
       run: |
-        kubectl set image deployment/ajitazureaks-ea0d react-nginx-container=ajitacr.azurecr.io/ajitazureaks:latest
+        kubectl set image deployment/react-nginx-app react-nginx-container=ajitacr.azurecr.io/ajitazureaks:latest
