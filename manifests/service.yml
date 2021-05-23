@@ -13,3 +13,15 @@ spec:
       name: http
     selector:
         app: "ajitazureaks-ea0d"
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: e-load-balancer-ajitazureaks-ea0d
+spec:
+  type: LoadBalancer
+  selector:
+    app: react-nginx
+  ports:
+  - port: 80
+    targetPort: 8080
